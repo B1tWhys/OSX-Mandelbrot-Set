@@ -1,0 +1,289 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D4DB1AE01CA64F370019C12A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DB1ADF1CA64F370019C12A /* AppDelegate.swift */; };
+		D4DB1AE21CA64F370019C12A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DB1AE11CA64F370019C12A /* ViewController.swift */; };
+		D4DB1AE41CA64F370019C12A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4DB1AE31CA64F370019C12A /* Assets.xcassets */; };
+		D4DB1AE71CA64F370019C12A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4DB1AE51CA64F370019C12A /* Main.storyboard */; };
+		D4DB1AEF1CA8DADB0019C12A /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DB1AEE1CA8DADB0019C12A /* Calculator.swift */; };
+		D4DB1AF11CA8F67C0019C12A /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DB1AF01CA8F67C0019C12A /* WindowController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D4DB1ADC1CA64F370019C12A /* MandelbrotSet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MandelbrotSet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4DB1ADF1CA64F370019C12A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D4DB1AE11CA64F370019C12A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D4DB1AE31CA64F370019C12A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D4DB1AE61CA64F370019C12A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D4DB1AE81CA64F370019C12A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4DB1AEE1CA8DADB0019C12A /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		D4DB1AF01CA8F67C0019C12A /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D4DB1AD91CA64F370019C12A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D4DB1AD31CA64F370019C12A = {
+			isa = PBXGroup;
+			children = (
+				D4DB1ADE1CA64F370019C12A /* MandelbrotSet */,
+				D4DB1ADD1CA64F370019C12A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D4DB1ADD1CA64F370019C12A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4DB1ADC1CA64F370019C12A /* MandelbrotSet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D4DB1ADE1CA64F370019C12A /* MandelbrotSet */ = {
+			isa = PBXGroup;
+			children = (
+				D4DB1ADF1CA64F370019C12A /* AppDelegate.swift */,
+				D4DB1AF01CA8F67C0019C12A /* WindowController.swift */,
+				D4DB1AE11CA64F370019C12A /* ViewController.swift */,
+				D4DB1AEE1CA8DADB0019C12A /* Calculator.swift */,
+				D4DB1AE31CA64F370019C12A /* Assets.xcassets */,
+				D4DB1AE51CA64F370019C12A /* Main.storyboard */,
+				D4DB1AE81CA64F370019C12A /* Info.plist */,
+			);
+			path = MandelbrotSet;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D4DB1ADB1CA64F370019C12A /* MandelbrotSet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4DB1AEB1CA64F370019C12A /* Build configuration list for PBXNativeTarget "MandelbrotSet" */;
+			buildPhases = (
+				D4DB1AD81CA64F370019C12A /* Sources */,
+				D4DB1AD91CA64F370019C12A /* Frameworks */,
+				D4DB1ADA1CA64F370019C12A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MandelbrotSet;
+			productName = MandelbrotSet;
+			productReference = D4DB1ADC1CA64F370019C12A /* MandelbrotSet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4DB1AD41CA64F370019C12A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Skyler Arnold";
+				TargetAttributes = {
+					D4DB1ADB1CA64F370019C12A = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = D4DB1AD71CA64F370019C12A /* Build configuration list for PBXProject "MandelbrotSet" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D4DB1AD31CA64F370019C12A;
+			productRefGroup = D4DB1ADD1CA64F370019C12A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D4DB1ADB1CA64F370019C12A /* MandelbrotSet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4DB1ADA1CA64F370019C12A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4DB1AE41CA64F370019C12A /* Assets.xcassets in Resources */,
+				D4DB1AE71CA64F370019C12A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D4DB1AD81CA64F370019C12A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4DB1AE21CA64F370019C12A /* ViewController.swift in Sources */,
+				D4DB1AF11CA8F67C0019C12A /* WindowController.swift in Sources */,
+				D4DB1AE01CA64F370019C12A /* AppDelegate.swift in Sources */,
+				D4DB1AEF1CA8DADB0019C12A /* Calculator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D4DB1AE51CA64F370019C12A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4DB1AE61CA64F370019C12A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D4DB1AE91CA64F370019C12A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D4DB1AEA1CA64F370019C12A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D4DB1AEC1CA64F370019C12A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MandelbrotSet/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.skyler.MandelbrotSet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D4DB1AED1CA64F370019C12A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MandelbrotSet/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.skyler.MandelbrotSet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D4DB1AD71CA64F370019C12A /* Build configuration list for PBXProject "MandelbrotSet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4DB1AE91CA64F370019C12A /* Debug */,
+				D4DB1AEA1CA64F370019C12A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4DB1AEB1CA64F370019C12A /* Build configuration list for PBXNativeTarget "MandelbrotSet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4DB1AEC1CA64F370019C12A /* Debug */,
+				D4DB1AED1CA64F370019C12A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D4DB1AD41CA64F370019C12A /* Project object */;
+}
