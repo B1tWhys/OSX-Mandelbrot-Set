@@ -21,7 +21,7 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.calculator.loopDepth = 200
         let newFrame = NSScreen.mainScreen()!.frame
         self.view.frame = newFrame
         
@@ -29,11 +29,14 @@ class ViewController: NSViewController {
     }
 
     func updateImageView() -> Void {
+        let timer = NSDate()
         let bitmap = self.calculateBitmap()
         //let bitmap = [PixelData](count: Int(self.view.frame.size.height*self.view.frame.size.width), repeatedValue: PixelData(a: 255, r: 255, g: 0, b: 0))
+        print(-timer.timeIntervalSinceNow)
         let image = imageFromBitmap(bitmap, width: Int(self.view.frame.size.width*2), height: Int(self.view.frame.size.height*2))
         image.size = self.view.frame.size
         self.imageView.image = image
+        print(-timer.timeIntervalSinceNow)
     }
     
     func calculateBitmap() -> [PixelData]{
@@ -47,19 +50,41 @@ class ViewController: NSViewController {
 
         for y in 0..<Int(height) {
             let complexComp = (Float(y) * yScaleFactor) - 1.0
-
+            
             for x in 0..<Int(width) {
                 let realComp = (Float(x) * xScaleFactor) - 2.0
                 let complexNum = ComplexNum(realComponent: realComp, complexComponent: complexComp)
                 let result = self.calculator.calculate(numToTest: complexNum)
-                let pixel: PixelData?
+                let pixel: PixelData!
+
                 if result == -1 {
                     pixel = PixelData(a: 255, r: 0, g: 0, b: 0)
                 } else {
-                    pixel = PixelData(a: 255, r: 255, g: 255, b: 255)
+//                    let color = NSColor(
+//                        calibratedHue: CGFloat((Float(result)+(2.0*Float(self.calculator.loopDepth)))/(Float(self.calculator.loopDepth)*3)),
+//                        saturation: 1.0,
+//                        brightness: CGFloat(Float(result)/(Float(self.calculator.loopDepth))),
+//                        alpha: 1.0)
+                    
+                    let resultFrac = Float(result)/Float(self.calculator.loopDepth + 1)
+                    let brightness = UInt8(0.2-(powf(resultFrac, 3.0)/5.0))
+                    let rChannel = UInt8()
+                    let gChannel = true ? UInt8((resultFrac*0.5)*255.0) : UInt8(0.0)
+//                    let blueChannel = UInt8(powf(resultFrac*0.9, 1.5)*255.0)
+                    let bChannel = true ? UInt8((0.1+(resultFrac*0.9))*255.0) : UInt8(0) // (0.1+(1*0.9))*255.0
+                    pixel = PixelData(
+                        a: 255,
+                        r: rChannel,
+                        g: gChannel,
+                        b: bChannel)
+                    
+//                    pixel = PixelData(
+//                        a: 255,
+//                        r: UInt8(255.0*Float(color.redComponent)),
+//                        g: UInt8(255.0*Float(color.greenComponent)),
+//                        b: UInt8(255.0*Float(color.blueComponent)))
                 }
-                
-                pixels.append(pixel!)
+                pixels.append(pixel)
             }
         }
         

@@ -29,6 +29,8 @@ private func abs(num: ComplexNum) -> Float {
 }
 
 class MandelbrotCalculator {
+    var loopDepth: Int = 200
+    
     func calculate(numToTest num: ComplexNum) -> Int {
         var z = ComplexNum(realComponent: 0, complexComponent: 0)
         var count = 1
@@ -36,7 +38,7 @@ class MandelbrotCalculator {
         while true {
             if abs(z) > 2 {
                 return count
-            } else if (count > 200) {
+            } else if (count > self.loopDepth) {
                 return -1
             }
             z = squareComp(z) + num
