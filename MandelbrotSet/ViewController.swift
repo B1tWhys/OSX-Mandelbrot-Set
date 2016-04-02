@@ -49,6 +49,7 @@ class ViewController: NSViewController {
         let xScaleFactor = 3.0/width
 
         for y in 0..<Int(height) {
+            
             let complexComp = (Float(y) * yScaleFactor) - 1.0
             
             for x in 0..<Int(width) {
@@ -67,11 +68,11 @@ class ViewController: NSViewController {
 //                        alpha: 1.0)
                     
                     let resultFrac = Float(result)/Float(self.calculator.loopDepth + 1)
-                    let brightness = UInt8(0.2-(powf(resultFrac, 3.0)/5.0))
+                    //let brightness = UInt8(0.5-(powf(resultFrac, 3.0)/2.0))
                     let rChannel = UInt8()
                     let gChannel = true ? UInt8((resultFrac*0.5)*255.0) : UInt8(0.0)
 //                    let blueChannel = UInt8(powf(resultFrac*0.9, 1.5)*255.0)
-                    let bChannel = true ? UInt8((0.1+(resultFrac*0.9))*255.0) : UInt8(0) // (0.1+(1*0.9))*255.0
+                    let bChannel = true ? UInt8((0.2+(resultFrac*0.7))*255.0) : UInt8(0) // (0.1+(1*0.9))*255.0
                     pixel = PixelData(
                         a: 255,
                         r: rChannel,
