@@ -21,7 +21,8 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.calculator.loopDepth = 200
+        print(NSScreen.mainScreen()!.frame)
+        self.calculator.loopDepth = 300
         let newFrame = NSScreen.mainScreen()!.frame
         self.view.frame = newFrame
         
@@ -49,9 +50,7 @@ class ViewController: NSViewController {
         let xScaleFactor = 3.0/width
 
         for y in 0..<Int(height) {
-            
             let complexComp = (Float(y) * yScaleFactor) - 1.0
-            
             for x in 0..<Int(width) {
                 let realComp = (Float(x) * xScaleFactor) - 2.0
                 let complexNum = ComplexNum(realComponent: realComp, complexComponent: complexComp)
@@ -71,7 +70,6 @@ class ViewController: NSViewController {
                     //let brightness = UInt8(0.5-(powf(resultFrac, 3.0)/2.0))
                     let rChannel = UInt8()
                     let gChannel = true ? UInt8((resultFrac*0.5)*255.0) : UInt8(0.0)
-//                    let blueChannel = UInt8(powf(resultFrac*0.9, 1.5)*255.0)
                     let bChannel = true ? UInt8((0.2+(resultFrac*0.7))*255.0) : UInt8(0) // (0.1+(1*0.9))*255.0
                     pixel = PixelData(
                         a: 255,
@@ -114,7 +112,7 @@ class ViewController: NSViewController {
             width*sizeof(PixelData),
             self.rgbColorSpace,
             self.bitmapInfo,
-            providerRef,
+            providerRef!,
             nil,
             true,
             CGColorRenderingIntent.RenderingIntentDefault)

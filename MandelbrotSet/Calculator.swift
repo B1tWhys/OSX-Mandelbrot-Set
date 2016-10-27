@@ -29,7 +29,7 @@ private func abs(num: ComplexNum) -> Float {
 }
 
 class MandelbrotCalculator {
-    var loopDepth: Int = 200
+    var loopDepth: Int = 2
     
     func calculate(numToTest num: ComplexNum) -> Int {
         var z = ComplexNum(realComponent: 0, complexComponent: 0)
