@@ -21,16 +21,16 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(NSScreen.mainScreen()!.frame)
-        self.calculator.loopDepth = 300
-        let newFrame = NSScreen.mainScreen()!.frame
+        print(NSScreen.main()!.frame)
+        self.calculator.loopDepth = 150
+        let newFrame = NSScreen.main()!.frame
+        //self.view.setFrameSize(NSSize(width: 2250, height: 1972))
         self.view.frame = newFrame
-        
         self.updateImageView()
     }
 
     func updateImageView() -> Void {
-        let timer = NSDate()
+        let timer = Date()
         let bitmap = self.calculateBitmap()
         //let bitmap = [PixelData](count: Int(self.view.frame.size.height*self.view.frame.size.width), repeatedValue: PixelData(a: 255, r: 255, g: 0, b: 0))
         print(-timer.timeIntervalSinceNow)
@@ -91,39 +91,43 @@ class ViewController: NSViewController {
     }
     
     let rgbColorSpace = CGColorSpaceCreateDeviceRGB()
-    let bitmapInfo: CGBitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.PremultipliedFirst.rawValue)
+    let bitmapInfo: CGBitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedFirst.rawValue)
     
-    func imageFromBitmap(pixels:[PixelData], width: Int, height: Int) -> NSImage {
+    func imageFromBitmap(_ pixels:[PixelData], width: Int, height: Int) -> NSImage {
         let bitsPerComponent = 8
         let bitsPerPixel = 32
         
         assert(pixels.count == Int(width*height))
         
-        var data = pixels
-        let providerRef = CGDataProviderCreateWithCFData(
-        NSData(bytes: &data, length: data.count * sizeof(PixelData))
+        var data: [PixelData] = pixels
+//        var dataSize = MemoryLayout<PixelData>.size
+//        let pointer = UnsafePointer<UInt8>(&data)
+//        let data = Data(bytes: pointer, count: (data.count * MemoryLayout<PixelData>.size))
+        
+        let providerRef = CGDataProvider(
+            data: Data(bytes: UnsafeRawPointer!(&data), count: data.count * MemoryLayout<PixelData>.size) as CFData
         )
         
-        let gcim = CGImageCreate(
-            width,
-            height,
-            bitsPerComponent,
-            bitsPerPixel,
-            width*sizeof(PixelData),
-            self.rgbColorSpace,
-            self.bitmapInfo,
-            providerRef!,
-            nil,
-            true,
-            CGColorRenderingIntent.RenderingIntentDefault)
+//        let providerRef = CGDataProvider(
+//            data: Data(bytes: UnsafePointer<UInt8>(&data), count: data.count * sizeof(PixelData))
+//        )
+//        let providerRef = CGDataProvider(
+//        data: Data(bytes: UnsafePointer<UInt8>(&data), count: data.count * sizeof(PixelData))
+//        )
         
-        return NSImage(CGImage: gcim!, size: CGSize(width: width, height: height))
-    }
-    
-    
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
+        let gcim = CGImage(
+            width: width,
+            height: height,
+            bitsPerComponent: bitsPerComponent,
+            bitsPerPixel: bitsPerPixel,
+            bytesPerRow: width*MemoryLayout<PixelData>.size,
+            space: self.rgbColorSpace,
+            bitmapInfo: self.bitmapInfo,
+            provider: providerRef!,
+            decode: nil,
+            shouldInterpolate: true,
+            intent: CGColorRenderingIntent.defaultIntent)
+        
+        return NSImage(cgImage: gcim!, size: CGSize(width: width, height: height))
     }
 }

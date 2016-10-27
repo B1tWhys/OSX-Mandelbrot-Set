@@ -20,7 +20,7 @@ private func + (left: ComplexNum, right: ComplexNum) -> ComplexNum {
     return (ComplexNum(realComponent: resultRealPart, complexComponent: resultCompPart))
 }
 
-private func abs(num: ComplexNum) -> Float {
+private func abs(_ num: ComplexNum) -> Float {
     let aSq = powf(num.realComponent, 2.0)
     let bSq = powf(num.complexComponent, 2.0)
     let abs = sqrt(aSq + bSq)
@@ -46,7 +46,7 @@ class MandelbrotCalculator {
         }
     }
     
-    private func squareComp(num: ComplexNum) -> ComplexNum {
+    fileprivate func squareComp(_ num: ComplexNum) -> ComplexNum {
         let real = powf(num.realComponent, 2.0)-powf(num.complexComponent, 2.0)
         let complex = 2.0 * num.realComponent * num.complexComponent
         
