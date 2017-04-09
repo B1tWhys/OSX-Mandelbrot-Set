@@ -29,7 +29,7 @@ private func abs(_ num: ComplexNum) -> Float {
 }
 
 class MandelbrotCalculator {
-    var loopDepth: Int = 2
+    var loopDepth: Int = 200
     
     func calculate(numToTest num: ComplexNum) -> Int {
         var z = ComplexNum(realComponent: 0, complexComponent: 0)
@@ -42,6 +42,23 @@ class MandelbrotCalculator {
                 return -1
             }
             z = squareComp(z) + num
+            count += 1
+        }
+    }
+
+    func calculateJulia(numToTest num: ComplexNum) -> Int {
+        let juliaSetC = ComplexNum(realComponent: -0.4, complexComponent: 0.6)
+        
+        var z = ComplexNum(realComponent: num.realComponent, complexComponent: num.complexComponent)
+        var count = 1
+        
+        while true {
+            if abs(z) > 2 {
+                return count
+            } else if (count > self.loopDepth) {
+                return -1
+            }
+            z = squareComp(z) + juliaSetC
             count += 1
         }
     }
